@@ -1,32 +1,43 @@
 <template>
   <div id="app">
-    <nav>
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </nav>
-    <router-view/>
+    <router-view></router-view>
+    <tab-bar>
+      <tab-bar-item path="/home">
+        <img slot="item-src" src="~assets/img/tabbar/format13.png" alt="">
+        <img slot="item-icon-active" src="./assets/img/tabbar/wodeqiye.png">
+        <div slot="item-text">首页</div>
+      </tab-bar-item>
+      <tab-bar-item path="/category">
+        <img slot="item-src" src="~assets/img/tabbar/product12.png" alt="">
+        <img slot="item-icon-active" src="./assets/img/tabbar/gengduomokuai.png">
+        <div slot="item-text">分类</div>
+      </tab-bar-item>
+       <tab-bar-item path="/cart">
+        <img slot="item-src" src="~assets/img/tabbar/cart-full.png" alt="">
+        <img slot="item-icon-active" src="./assets/img/tabbar/dingdanguanli.png">
+        <div slot="item-text">购物车</div>
+      </tab-bar-item>
+       <tab-bar-item path="/profile">
+        <img slot="item-src" src="~assets/img/tabbar/bussiness-man.png" alt="">
+        <img slot="item-icon-active" src="./assets/img/tabbar/yuangongguanli.png">
+        <div slot="item-text">个人</div>
+      </tab-bar-item>
+    </tab-bar>
   </div>
 </template>
 
+<script>
+  import TabBar from "components/common/tabbar/Tabbar";
+  import TabBarItem from "components/common/tabbar/TabBarItem";
+  export default {
+    name: "App",
+    components:{
+      TabBar,
+      TabBarItem
+    }
+  }
+</script>
+
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-nav {
-  padding: 30px;
-}
-
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
-}
+  @import "assets/css/base"
 </style>
